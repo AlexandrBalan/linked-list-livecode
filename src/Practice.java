@@ -13,7 +13,48 @@ public class Practice {
 
         myNode.next = anotherNode;
 
+        ListNode moreNode = new ListNode();
+        moreNode.data = 'r';
+
+        anotherNode.next = moreNode;
+
+        ListNode coolNode = new ListNode();
+        coolNode.data = 'w';
+
+        coolNode.next = myNode;
+
+
+        ListNode extra = moreNode;
+        moreNode.data = 'e';
+
+
+        //added a new one myself into the list.
+        ListNode hello = new ListNode();
+        hello.data = 'x';
+        extra.next = hello;
+
+        printList(coolNode);
+        // System.out.println(myNode.next.next.data);
+        // System.out.println(myNode.next.data);
         // System.out.println(myNode.data);
         // System.out.println(anotherNode.data);
+    }
+
+    public static void printList(ListNode head) {
+        //starting from head
+        //print all data in list in order
+        
+        //keep track of current, starting at head
+        //until end of list
+        //      //print out data at current
+        //      //move current to the next node
+
+        ListNode current = head;
+
+        while(current != null) {
+            System.out.println(current.data);
+
+            current = current.next;
+        }
     }
 }
