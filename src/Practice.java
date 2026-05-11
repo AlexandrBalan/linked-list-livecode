@@ -34,6 +34,12 @@ public class Practice {
         extra.next = hello;
 
         printList(coolNode);
+
+        int xCount = countX(coolNode);
+
+        System.out.println(xCount);
+
+
         // System.out.println(myNode.next.next.data);
         // System.out.println(myNode.next.data);
         // System.out.println(myNode.data);
@@ -56,5 +62,21 @@ public class Practice {
 
             current = current.next;
         }
+    }
+    //this should count how many nodes hold an x
+    public static int countX(ListNode head) {
+        ListNode current = head;
+        int counter = 0;
+
+        while(current != null) {
+            if(current.data == 'x') {
+                counter++;
+            }
+
+            current = current.next;
+        }
+
+        return counter;
+
     }
 }
