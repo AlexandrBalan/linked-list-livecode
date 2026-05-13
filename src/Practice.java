@@ -14,7 +14,7 @@ public class Practice {
         myNode.next = anotherNode;
 
         ListNode moreNode = new ListNode();
-        moreNode.data = 'r';
+        moreNode.data = 'e';
 
         anotherNode.next = moreNode;
 
@@ -33,17 +33,21 @@ public class Practice {
         hello.data = 'x';
         extra.next = hello;
 
-        printList(coolNode);
+        // printList(coolNode);
 
-        int xCount = countX(coolNode);
+        // int xCount = countX(coolNode);
 
-        System.out.println(xCount);
+        // System.out.println(xCount);
 
 
         // System.out.println(myNode.next.next.data);
         // System.out.println(myNode.next.data);
         // System.out.println(myNode.data);
         // System.out.println(anotherNode.data);
+
+        ListNode newHead = removeAt(coolNode, 0);
+
+        printList(newHead);
     }
 
     public static void printList(ListNode head) {
@@ -78,5 +82,30 @@ public class Practice {
 
         return counter;
 
+    }
+
+
+    //remove the node at removeIndex, and then return the head of the list.
+
+    //Example:
+
+    //e --> t --> k --> y
+
+    // removeIndex 2
+    //e --> t --> y
+    public static ListNode removeAt(ListNode head, int removeIndex) {
+        if(removeIndex == 0) {
+            return head.next;
+        }
+
+        ListNode current = head;
+
+        for(int i = 0; i < removeIndex - 1; i++) {
+            current = current.next;
+        }
+
+        current.next = current.next.next;
+
+        return head;
     }
 }
